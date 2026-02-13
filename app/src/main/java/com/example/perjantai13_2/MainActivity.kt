@@ -42,12 +42,12 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
 
-    // var c by remember { mutableIntStateOf(0) }
+    var c by remember { mutableIntStateOf(0) }
     var d by rememberSaveable { mutableIntStateOf(100)}
-    var c = 0
+    // var c = 0
 
 
-    Log.d("XYZ", "Greeting(): c = $c")
+    Log.d("XYZ", "Greeting(): c = $c, d = $d")
 
     c = d +99
 
@@ -58,13 +58,13 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
         )
 
         Button({
-            // c++
+            c++
             d++
-            Log.d("XYZ", "onClick, $d")
+            Log.d("XYZ", "onClick, $c, $d")
         }) {
             Text("Klick!")
         }
-        Text("c = $c", fontSize = 62.sp)
+        Text("c = $c, d = $d", fontSize = 62.sp)
     }
 }
 
