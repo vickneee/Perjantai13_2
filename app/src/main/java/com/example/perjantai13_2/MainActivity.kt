@@ -40,10 +40,11 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Log.d("XYZ", "Greeting()")
+
     var c by remember {
         mutableIntStateOf(0)
     }
+    Log.d("XYZ", "Greeting(): c = $c")
     Column {
         Text(
             text = "Hello $name!",
