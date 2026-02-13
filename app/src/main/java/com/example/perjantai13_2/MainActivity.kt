@@ -6,6 +6,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Button
@@ -64,7 +65,17 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
         }) {
             Text("Klick!")
         }
-        Text("c = $c, d = $d", fontSize = 62.sp)
+        // Text("c = $c, d = $d", fontSize = 62.sp)
+        ViewValues(x = c, y = d)
+    }
+}
+
+@Composable
+fun ViewValues(x: Int, y: Int) {
+    Log.d("XYZ", "ViewValues, $x, $y")
+    Row {
+        Text("x = $x", fontSize = 36.sp)
+        Text(" y = $y", fontSize = 36.sp)
     }
 }
 
